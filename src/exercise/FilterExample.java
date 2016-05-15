@@ -36,14 +36,14 @@ class Filter<T> {
 }
 
 
-class OddNumberFilter extends Filter<Integer> {
+class NumberFilter extends Filter<Integer> {
 
     public boolean condition(Integer x) {
-        return x % 2 == 1;
+        return x % 2 == 1;   // 奇数だけを選ぶ
     }
     
     public Integer value(Integer x) {
-        return 2 * x;
+        return 2 * x;   // 2倍の数に変換する
     }
 
 }
@@ -61,7 +61,7 @@ public class FilterExample {
         //    System.out.println(x);
         //}
         //
-        OddNumberFilter filter2 = new OddNumberFilter();
+        NumberFilter filter2 = new NumberFilter();
         for (int x: filter2.filter(list)) {
             System.out.println(x);
         }
