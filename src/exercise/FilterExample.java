@@ -38,10 +38,12 @@ class Filter<T> {
 
 class NumberFilter extends Filter<Integer> {
 
+    @Override
     public boolean condition(Integer x) {
         return x % 2 == 1;   // 奇数だけを選ぶ
     }
     
+    @Override
     public Integer value(Integer x) {
         return 2 * x;   // 2倍の数に変換する
     }
