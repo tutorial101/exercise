@@ -18,7 +18,8 @@ class Filter<T> {
         List<T> newlist = new ArrayList<T>();
         for (T x: list) {
             if (condition(x)) {
-                newlist.add(x);
+                T v = value(x);
+                newlist.add(v);
             }
         }
         return newlist;
@@ -27,14 +28,22 @@ class Filter<T> {
     public boolean condition(T x) {
         return true;
     }
+    
+    public T value(T x) {
+        return x;
+    }
 
 }
 
 
 class OddNumberFilter extends Filter<Integer> {
-    
+
     public boolean condition(Integer x) {
         return x % 2 == 1;
+    }
+    
+    public Integer value(Integer x) {
+        return 2 * x;
     }
 
 }
